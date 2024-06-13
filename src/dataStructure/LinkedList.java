@@ -43,12 +43,36 @@ public class LinkedList {
         length = 0;
     }
 
+    public void print() {
+        Node temp = this.head;
+        System.out.println("-------------------------------");
+        while(temp != null) {
+            System.out.println(temp.data);
+            temp = temp.next;
+        }
+    }
+
+    public void append(String data) {
+        Node newNode = new Node(data);
+        if (length == 0) {
+            head = newNode;
+            tail = newNode;
+        } else {
+            tail.next = newNode;
+            tail = newNode;
+        }
+        length++;
+    }
+
 
     public static void main(String[] args) {
         LinkedList list = new LinkedList("Elemento 1");
+        list.append("Elemento 2");
+        list.append("Elemento 3");
         list.getHead();
         list.getTail();
         list.getLength();
+        list.print();
     }
 
 
