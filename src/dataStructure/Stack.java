@@ -74,12 +74,16 @@ public class Stack {
         myStack.getHeight();
     }
 
-    class Node {
+    public class Node {
         int value;
         Node next;
 
         Node (int value) {
             this.value = value;
+        }
+
+        public int getValue() {
+            return value;
         }
     }
 }
