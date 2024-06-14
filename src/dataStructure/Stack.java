@@ -34,12 +34,31 @@ public class Stack {
         System.out.println("---------------------");
     }
 
-    public static void main(String[] args) {
-        Stack myStack = new Stack(4);
+    public void push(int value) {
+        Node newNode = new Node(value);
+        if (height == 0) {
+            top = newNode;
+        } else {
+            newNode.next = top;
+            top = newNode;
+        }
+        height++;
+    }
 
+    public static void main(String[] args) {
+        Stack myStack = new Stack(0);
+
+//        myStack.getTop();
+//        myStack.getHeight();
+//        myStack.print();
+
+        for (int i = 1; i <= 5; i++) {
+            myStack.push(i);
+        }
+
+        myStack.print();
         myStack.getTop();
         myStack.getHeight();
-        myStack.print();
     }
 
     class Node {
