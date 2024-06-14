@@ -8,6 +8,7 @@ public class Stack {
     public Stack(int value ) {
         Node newNode = new Node(value);
         top = newNode;
+        height = 1;
     }
 
     class Node {
