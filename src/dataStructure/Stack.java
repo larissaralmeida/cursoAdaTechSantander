@@ -45,6 +45,17 @@ public class Stack {
         height++;
     }
 
+    public Node pop() {
+        if (height == 0) return null;
+
+        Node temp = top;
+        top = top.next;
+        temp.next = null;
+        height--;
+
+        return temp;
+    }
+
     public static void main(String[] args) {
         Stack myStack = new Stack(0);
 
@@ -52,9 +63,11 @@ public class Stack {
 //        myStack.getHeight();
 //        myStack.print();
 
-        for (int i = 1; i <= 5; i++) {
-            myStack.push(i);
-        }
+//        for (int i = 1; i <= 5; i++) {
+//            myStack.push(i);
+//        }
+
+        System.out.println(myStack.pop().value);
 
         myStack.print();
         myStack.getTop();
