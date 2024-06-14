@@ -11,6 +11,37 @@ public class Stack {
         height = 1;
     }
 
+    public void getTop() {
+        if(top == null) {
+            System.out.println("Pilha vazia!");
+        } else {
+            System.out.println("Topo da pilha: " + top.value);
+        }
+    }
+
+    public void getHeight() {
+        System.out.println("Altura da pilha: " + height);
+    }
+
+    public void print() {
+        System.out.println("---------------------");
+        Node temp = top;
+
+        while (temp != null) {
+            System.out.println(temp.value);
+            temp = temp.next;
+        }
+        System.out.println("---------------------");
+    }
+
+    public static void main(String[] args) {
+        Stack myStack = new Stack(4);
+
+        myStack.getTop();
+        myStack.getHeight();
+        myStack.print();
+    }
+
     class Node {
         int value;
         Node next;
